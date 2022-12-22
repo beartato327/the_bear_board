@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "829663782203",
+    "project_id": "bear-board",
+    "storage_bucket": "bear-board.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829663782203:android:5f0fdd1c2e16ee2d22431e",
+        "android_client_info": {
+          "package_name": "com.example.the_bear_board"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829663782203-femmtikuv7o5pnkk821jogm8krmvl7rj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXuF653Byy2ghEWX1OZ5-aODT72ns9jmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829663782203-femmtikuv7o5pnkk821jogm8krmvl7rj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "829663782203-7rf384v4q40qtuhkl148dc5qokbbusmd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bears.thebearboard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
