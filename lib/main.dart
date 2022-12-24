@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +36,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',//FirebaseAuth.instance.currentUser == null ? '/sign-in' : '/profile',
       routes:  {
         '/': (context) => const HomePage(),
+        '/imageUpload': (context) => const ImageUpload(),
         '/sign-in': (context) {
           return SignInScreen(
             providers: providers,
@@ -86,7 +92,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FirebaseAuth.instance.currentUser == null ? Visibility(child: FloatingActionButton(onPressed: (){}, ), visible: false,) : FloatingActionButton.extended(
-        onPressed: () {FirebaseFirestore.instance.collection('photos').snapshots().listen((data){print(data.docs[0]['photo']);});},
+        onPressed: () {Navigator.pushNamed(context, '/imageUpload');},
         label: const Text("Add"),
         icon: Icon(Icons.add_a_photo),
         backgroundColor: Colors.red,
@@ -94,3 +100,84 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+class ImageUpload extends StatefulWidget {
+  const ImageUpload({Key? key}) : super(key: key);
+
+  @override
+  State<ImageUpload> createState() => _ImageUploadState();
+}
+
+class _ImageUploadState extends State<ImageUpload> {
+  String imageUrl = '';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar( title: const Text("Share a Bear"), centerTitle: true,),
+    body: Container(
+      child: Column(
+        children: <Widget>[
+          Container(
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
+                ),
+                border: Border.all(color: Colors.white),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12,
+                    offset: Offset(2, 2),
+                    spreadRadius: 2,
+                    blurRadius: 1,
+                  ),
+                ],
+              ),
+              child: imageUrl.isNotEmpty ? Image.network(imageUrl) : Image.network('https://i.imgur.com/sUFH1Aq.png')
+          ),
+          SizedBox(height: 20.0,),
+          ElevatedButton(
+            child: Text("Upload Image", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20)),
+            onPressed: (){
+              uploadImage();
+            },
+          ),
+          ],
+      ),
+    ),);
+  }
+
+  uploadImage() async {
+    final _firebaseStorage = FirebaseStorage.instance;
+    final _imagePicker = ImagePicker();
+    XFile? image;
+    //Check Permissions
+
+    var permissionStatus = await Permission.photos.request();
+    if (permissionStatus.isGranted){
+      //Select Image
+      image = await _imagePicker.pickImage(source: ImageSource.gallery);
+      var file = File(image!.path);
+      if (image != null){
+        //Upload to Firebase
+        var snapshot = await _firebaseStorage.ref()
+            .child('images/imageName')
+            .putFile(file);
+        var downloadUrl = await snapshot.ref.getDownloadURL();
+        setState(() {
+          imageUrl = downloadUrl;
+        });
+      } else {
+        print('No Image Path Received');
+      }
+    } else {
+      print('Permission not granted. Try Again with permission access');
+    }
+  }
+}
+
+
+
