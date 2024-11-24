@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "785503781697",
+    "project_id": "the-bear-board",
+    "storage_bucket": "the-bear-board.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785503781697:android:71feb0f9c0ad83205097c0",
+        "android_client_info": {
+          "package_name": "com.tatoinc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDJHpI_8Nc9i4Zm6MyfZtWSkQeTJcJgME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
