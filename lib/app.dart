@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TBBAppTheme.lightTheme,
       darkTheme: TBBAppTheme.darkTheme,
-      home: OnboardingScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }
