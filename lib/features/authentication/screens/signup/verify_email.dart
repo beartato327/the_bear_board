@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:the_bear_board/features/authentication/screens/login/login.dart';
-import 'package:the_bear_board/features/success_screen.dart';
+import 'package:the_bear_board/common/widgets/success_screen/success_screen.dart';
 
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';

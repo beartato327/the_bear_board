@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:the_bear_board/features/authentication/screens/signup/signup.dart';
 
 import '../../../../../utils/constants/sizes.dart';
+import '../../password_configuration/forgot_password.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -40,7 +41,7 @@ class LoginForm extends StatelessWidget {
                     ],
                   ),
                   TextButton(
-                      onPressed: () {}, child: const Text("Forgot Password?"))
+                      onPressed: () => Get.to(() => const ForgotPasswordScreen()), child: const Text("Forgot Password?"))
                 ],
               ),
               const SizedBox(height: TBBSizes.spaceBetweenSections),
