@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCDJHpI_8Nc9i4Zm6MyfZtWSkQeTJcJgME',
-    appId: '1:785503781697:android:71feb0f9c0ad83205097c0',
+    appId: '1:785503781697:android:9a0ff6f132909e055097c0',
     messagingSenderId: '785503781697',
     projectId: 'the-bear-board',
     storageBucket: 'the-bear-board.firebasestorage.app',
@@ -63,6 +63,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '785503781697',
     projectId: 'the-bear-board',
     storageBucket: 'the-bear-board.firebasestorage.app',
+    androidClientId: '785503781697-2mp7mmmqhkdrvkanqa7pkd7c388lqpv1.apps.googleusercontent.com',
+    iosClientId: '785503781697-kerd9uooaklaak23sdlpq6alkbd1gaqp.apps.googleusercontent.com',
     iosBundleId: 'com.tatoinc.theBearBoard',
   );
+
 }

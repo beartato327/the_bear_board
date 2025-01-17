@@ -9,10 +9,23 @@
       "client_info": {
         "mobilesdk_app_id": "1:785503781697:android:71feb0f9c0ad83205097c0",
         "android_client_info": {
-          "package_name": "com.tatoinc.the_bear_board"
+          "package_name": "com.tatoinc"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "785503781697-2mp7mmmqhkdrvkanqa7pkd7c388lqpv1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tatoinc",
+            "certificate_hash": "c6f223d8fd444b8bd5d6e8791d6d70e87062e450"
+          }
+        },
+        {
+          "client_id": "785503781697-hs2d4sk3u7m31tm1f0f13hpccb0fb27k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCDJHpI_8Nc9i4Zm6MyfZtWSkQeTJcJgME"
@@ -20,7 +33,55 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785503781697-hs2d4sk3u7m31tm1f0f13hpccb0fb27k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "785503781697-kerd9uooaklaak23sdlpq6alkbd1gaqp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tatoinc.theBearBoard"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785503781697:android:9a0ff6f132909e055097c0",
+        "android_client_info": {
+          "package_name": "com.tatoinc.the_bear_board"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785503781697-hs2d4sk3u7m31tm1f0f13hpccb0fb27k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDJHpI_8Nc9i4Zm6MyfZtWSkQeTJcJgME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785503781697-hs2d4sk3u7m31tm1f0f13hpccb0fb27k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "785503781697-kerd9uooaklaak23sdlpq6alkbd1gaqp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tatoinc.theBearBoard"
+              }
+            }
+          ]
         }
       }
     }
